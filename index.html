@@ -7,11 +7,72 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { background-color: #0a0a0a; color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-x: hidden; }
-        .glow-border { border: 1px solid rgba(0, 255, 242, 0.2); transition: all 0.3s ease; }
-        .glow-border:hover { border-color: #00fff2; box-shadow: 0 0 15px rgba(0, 255, 242, 0.2); }
+        body { background-color: #0a0a0a; color: #ffffff; font-family: system-ui, -apple-system, sans-serif; }
+        .glow-cyan { box-shadow: 0 0 15px rgba(0, 255, 242, 0.2); border: 1px solid rgba(0, 255, 242, 0.3); }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
 
-    <div id="loader" class="fixed inset-0 z-50 bg-black flex flex
+    <div id="splash" class="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="w-16 h-16 border-4 border-[#00fff2] border-t-transparent rounded-full animate-spin mb-4"></div>
+        <h2 class="text-[#00fff2] tracking-[0.3em] font-bold animate-pulse">AI SCOUT SYSTEM</h2>
+    </div>
+
+    <div id="app-content" class="opacity-0 transition-opacity duration-1000 flex-1 flex flex-col">
+        <header class="p-6 border-b border-zinc-800 flex justify-between items-center bg-black/50 backdrop-blur-md sticky top-0 z-40">
+            <div class="flex items-center gap-3">
+                <i data-lucide="scan-eye" class="text-[#00fff2] w-8 h-8"></i>
+                <span class="text-xl font-black tracking-tighter text-[#00fff2]">AI SCOUT</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-mono text-zinc-500">
+                <span class="flex items-center gap-1"><span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span> LIVE</span>
+                <span class="hidden md:block">ENCRYPTED CONNECTION</span>
+            </div>
+        </header>
+
+        <main class="p-6 md:p-10 max-w-6xl mx-auto w-full">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-zinc-900/50 p-6 rounded-2xl glow-cyan">
+                    <i data-lucide="cpu" class="text-[#00fff2] mb-4"></i>
+                    <h3 class="text-zinc-400 text-sm">حالة المعالج</h3>
+                    <p class="text-2xl font-bold">نشط (Optimized)</p>
+                </div>
+                <div class="bg-zinc-900/50 p-6 rounded-2xl glow-cyan">
+                    <i data-lucide="database" class="text-[#00fff2] mb-4"></i>
+                    <h3 class="text-zinc-400 text-sm">قاعدة البيانات</h3>
+                    <p class="text-2xl font-bold">متصلة</p>
+                </div>
+                <div class="bg-zinc-900/50 p-6 rounded-2xl glow-cyan">
+                    <i data-lucide="shield-check" class="text-[#00fff2] mb-4"></i>
+                    <h3 class="text-zinc-400 text-sm">مستوى الأمان</h3>
+                    <p class="text-2xl font-bold">أقصى حماية</p>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900/20 border border-zinc-800 rounded-3xl p-12 text-center">
+                <div class="w-20 h-20 bg-zinc-900 rounded-full flex items-center justify-center mx-auto mb-6 border border-zinc-700">
+                    <i data-lucide="layout-dashboard" class="text-zinc-500 w-10 h-10"></i>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">مرحباً بك في النظام الرئيسي</h2>
+                <p class="text-zinc-500 max-w-md mx-auto">تم إعداد لوحة التحكم بنجاح. يمكنك الآن البدء في إضافة أدواتك الذكية هنا.</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // تفعيل الأيقونات
+        lucide.createIcons();
+
+        // منطق إظهار المحتوى وإخفاء السواد
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.getElementById('splash').style.opacity = '0';
+                document.getElementById('app-content').classList.remove('opacity-0');
+                setTimeout(() => {
+                    document.getElementById('splash').style.display = 'none';
+                }, 700);
+            }, 1200); // سيستغرق التحميل ثانية ونصف تقريباً
+        });
+    </script>
+</body>
+</html>
