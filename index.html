@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI SCOUT | منصة الاستكشاف الذكي</title>
+    <title>AI SCOUT | Intelligent Exploration Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { background-color: #050505; color: #ffffff; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', system-ui, sans-serif; }
         .glow-cyan { box-shadow: 0 0 20px rgba(0, 255, 242, 0.1); border: 1px solid rgba(0, 255, 242, 0.2); }
         .hero-gradient { background: radial-gradient(circle at center, rgba(0, 255, 242, 0.15) 0%, transparent 70%); }
         .modal-blur { backdrop-filter: blur(10px); background: rgba(0, 0, 0, 0.8); }
@@ -17,30 +17,29 @@
 
     <div id="loader" class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center transition-opacity duration-700">
         <div class="w-16 h-16 border-4 border-[#00fff2] border-t-transparent rounded-full animate-spin mb-4 shadow-[0_0_15px_#00fff2]"></div>
-        <p class="text-[#00fff2] tracking-[0.5em] font-black animate-pulse">AI SCOUT</p>
+        <p class="text-[#00fff2] tracking-[0.5em] font-black animate-pulse uppercase">AI SCOUT</p>
     </div>
 
     <div id="article-modal" class="fixed inset-0 z-[60] hidden modal-blur p-4 md:p-10 overflow-y-auto">
         <div class="max-w-4xl mx-auto bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl relative mt-10">
-            <button onclick="closeModal()" class="absolute top-4 left-4 bg-black/50 p-2 rounded-full hover:bg-[#00fff2] hover:text-black transition-colors">
+            <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/50 p-2 rounded-full hover:bg-[#00fff2] hover:text-black transition-colors">
                 <i data-lucide="x"></i>
             </button>
             <img id="modal-img" src="" class="w-full h-64 object-cover">
-            <div class="p-8">
+            <div class="p-8 text-left">
                 <h2 id="modal-title" class="text-3xl font-bold text-[#00fff2] mb-6"></h2>
                 
                 <div class="bg-black/50 p-4 rounded-xl mb-6 border border-zinc-800 flex items-center gap-4">
                     <button class="bg-[#00fff2] text-black p-3 rounded-full"><i data-lucide="play"></i></button>
                     <div class="flex-1">
-                        <p class="text-sm font-bold">استمع إلى البودكاست</p>
+                        <p class="text-sm font-bold">Listen to Podcast</p>
                         <div class="h-1 bg-zinc-700 w-full mt-2 rounded-full overflow-hidden">
                             <div class="h-full bg-[#00fff2] w-1/3"></div>
                         </div>
                     </div>
                 </div>
 
-                <div id="modal-content" class="text-zinc-300 leading-relaxed space-y-4">
-                    </div>
+                <div id="modal-content" class="text-zinc-300 leading-relaxed space-y-4"></div>
             </div>
         </div>
     </div>
@@ -49,65 +48,65 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <i data-lucide="scan-eye" class="text-[#00fff2] w-8 h-8"></i>
-                <span class="text-xl font-black tracking-tighter">AI<span class="text-[#00fff2]">SCOUT</span></span>
+                <span class="text-xl font-black tracking-tighter uppercase">AI<span class="text-[#00fff2]">SCOUT</span></span>
             </div>
             <nav class="hidden md:flex gap-8 text-sm font-medium text-zinc-400 uppercase tracking-widest">
-                <a href="#" class="hover:text-[#00fff2] transition-colors">الاستكشاف</a>
-                <a href="#" class="hover:text-[#00fff2] transition-colors">الذكاء الاصطناعي</a>
-                <a href="#articles" class="hover:text-[#00fff2] transition-colors">المقالات</a>
+                <a href="#" class="hover:text-[#00fff2] transition-colors">Explore</a>
+                <a href="#" class="hover:text-[#00fff2] transition-colors">Intelligence</a>
+                <a href="#articles" class="hover:text-[#00fff2] transition-colors">Insights</a>
             </nav>
         </div>
     </header>
 
     <section class="relative min-h-[70vh] flex items-center justify-center text-center p-6 hero-gradient">
         <div class="max-w-4xl">
-            <span class="inline-block px-4 py-1 rounded-full border border-[#00fff2]/30 text-[#00fff2] text-xs font-mono mb-6 animate-pulse">Intelligence Feed Activated</span>
-            <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight uppercase">استكشف حدود <br><span class="text-[#00fff2]">العقل الاصطناعي</span></h1>
-            <p class="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">نحلل البيانات، نستشرف المستقبل، ونقدم لك أحدث رؤى الذكاء الاصطناعي من خلال محتوى بصري ومسموع فائق الجودة.</p>
+            <span class="inline-block px-4 py-1 rounded-full border border-[#00fff2]/30 text-[#00fff2] text-xs font-mono mb-6 animate-pulse uppercase">Intelligence Feed Activated</span>
+            <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight uppercase">Explore the <br><span class="text-[#00fff2]">AI Frontiers</span></h1>
+            <p class="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">Analyzing data, envisioning the future, and delivering the latest AI insights through high-fidelity visual and audio content.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#articles" class="bg-[#00fff2] text-black px-8 py-4 rounded-full font-bold hover:shadow-[0_0_20px_#00fff2] transition-all">ابدأ الاستكشاف</a>
-                <button class="border border-zinc-700 px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-all">شاهد العرض</button>
+                <a href="#articles" class="bg-[#00fff2] text-black px-8 py-4 rounded-full font-bold hover:shadow-[0_0_20px_#00fff2] transition-all">Start Exploring</a>
+                <button class="border border-zinc-700 px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-all">Watch Demo</button>
             </div>
         </div>
     </section>
 
     <section id="articles" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="flex justify-between items-end mb-12">
-            <div>
-                <h2 class="text-3xl font-bold mb-2">أحدث المقالات</h2>
+            <div class="text-left">
+                <h2 class="text-3xl font-bold mb-2">Latest Insights</h2>
                 <div class="h-1 w-20 bg-[#00fff2]"></div>
             </div>
             <p class="text-zinc-500 hidden md:block italic">Intelligence Grid v4.0</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div onclick="openModal('مستقبل الروبوتات الطبية', 'robotics', 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800')" class="group cursor-pointer bg-zinc-900/40 rounded-3xl overflow-hidden border border-zinc-800 hover:border-[#00fff2]/50 transition-all">
+            <div onclick="openModal('The Future of Medical Robotics', 'robotics', 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800')" class="group cursor-pointer bg-zinc-900/40 rounded-3xl overflow-hidden border border-zinc-800 hover:border-[#00fff2]/50 transition-all">
                 <div class="h-56 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
-                <div class="p-6">
+                <div class="p-6 text-left">
                     <span class="text-[#00fff2] text-xs font-mono uppercase tracking-tighter">Technology</span>
-                    <h3 class="text-xl font-bold mt-2 group-hover:text-[#00fff2] transition-colors">مستقبل الروبوتات الطبية والذكاء الاصطناعي في الجراحة</h3>
+                    <h3 class="text-xl font-bold mt-2 group-hover:text-[#00fff2] transition-colors">Future of Medical Robotics and AI in Surgery</h3>
                 </div>
             </div>
 
-            <div onclick="openModal('أخلاقيات الذكاء الاصطناعي', 'ethics', 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800')" class="group cursor-pointer bg-zinc-900/40 rounded-3xl overflow-hidden border border-zinc-800 hover:border-[#00fff2]/50 transition-all">
+            <div onclick="openModal('AI Ethics & Humanity', 'ethics', 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800')" class="group cursor-pointer bg-zinc-900/40 rounded-3xl overflow-hidden border border-zinc-800 hover:border-[#00fff2]/50 transition-all">
                 <div class="h-56 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
-                <div class="p-6">
+                <div class="p-6 text-left">
                     <span class="text-[#00fff2] text-xs font-mono uppercase tracking-tighter">Philosophy</span>
-                    <h3 class="text-xl font-bold mt-2 group-hover:text-[#00fff2] transition-colors">هل يمكن للذكاء الاصطناعي أن يمتلك مشاعر حقيقية؟</h3>
+                    <h3 class="text-xl font-bold mt-2 group-hover:text-[#00fff2] transition-colors">Can AI Possess Real Human Emotions?</h3>
                 </div>
             </div>
 
-            <div onclick="openModal('المدن الذكية 2030', 'cities', 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800')" class="group cursor-pointer bg-zinc-900/40 rounded-3xl overflow-hidden border border-zinc-800 hover:border-[#00fff2]/50 transition-all">
+            <div onclick="openModal('Smart Cities 2030', 'cities', 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800')" class="group cursor-pointer bg-zinc-900/40 rounded-3xl overflow-hidden border border-zinc-800 hover:border-[#00fff2]/50 transition-all">
                 <div class="h-56 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
-                <div class="p-6">
+                <div class="p-6 text-left">
                     <span class="text-[#00fff2] text-xs font-mono uppercase tracking-tighter">Future</span>
-                    <h3 class="text-xl font-bold mt-2 group-hover:text-[#00fff2] transition-colors">كيف ستبدو المدن الذكية في عام 2030؟</h3>
+                    <h3 class="text-xl font-bold mt-2 group-hover:text-[#00fff2] transition-colors">How Smart Cities will Look in 2030?</h3>
                 </div>
             </div>
         </div>
@@ -115,35 +114,32 @@
 
     <footer class="py-20 border-t border-zinc-900 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <div>
+            <div class="text-left">
                 <div class="flex items-center gap-2 mb-4">
                     <i data-lucide="scan-eye" class="text-[#00fff2] w-6 h-6"></i>
                     <span class="text-lg font-black tracking-tighter italic">AI SCOUT</span>
                 </div>
-                <p class="text-zinc-500 text-sm">جميع الحقوق محفوظة لمشروع AI SCOUT © 2024</p>
+                <p class="text-zinc-500 text-sm">All rights reserved to AI SCOUT Project © 2024</p>
             </div>
             <div class="flex gap-8 text-xs font-bold text-zinc-400 uppercase tracking-widest">
-                <a href="javascript:openModal('سياسة الخصوصية', 'privacy', '')" class="hover:text-[#00fff2]">سياسة الخصوصية</a>
-                <a href="javascript:openModal('شروط الاستخدام', 'terms', '')" class="hover:text-[#00fff2]">شروط الاستخدام</a>
-                <a href="#" class="hover:text-[#00fff2]">اتصل بنا</a>
+                <a href="javascript:openModal('Privacy Policy', 'privacy', '')" class="hover:text-[#00fff2]">Privacy Policy</a>
+                <a href="javascript:openModal('Terms of Use', 'terms', '')" class="hover:text-[#00fff2]">Terms of Use</a>
+                <a href="#" class="hover:text-[#00fff2]">Contact Us</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // تفعيل الأيقونات
         lucide.createIcons();
 
-        // محتوى افتراضي للمقالات
         const articleData = {
-            robotics: "هذا المقال يستعرض آخر ما توصل إليه العلم في مجال الجراحة الروبوتية... كيف يمكن للذكاء الاصطناعي تقليل نسبة الخطأ البشري؟ وما هي التحديات الأخلاقية أمام هذه التقنيات؟",
-            ethics: "عندما نتحدث عن وعي الآلة، نجد أنفسنا أمام معضلة فلسفية كبيرة... الذكاء الاصطناعي لا يمتلك قلباً، لكن هل يمكنه محاكاة التعاطف البشري لدرجة تجعلنا لا نفرق بينهما؟",
-            cities: "بحلول عام 2030، ستكون المباني مرتبطة بشبكة مركزية تدير الطاقة بشكل آلي... السيارات ستتحدث مع إشارات المرور، وسيتم القضاء على الازدحام نهائياً بفضل خوارزميات التنبؤ.",
-            privacy: "نحن في AI SCOUT نلتزم بحماية بياناتك... نحن لا نجمع أي معلومات شخصية دون موافقتك الصريحة، ونستخدم تشفير 256 بت لضمان سرية التصفح.",
-            terms: "باستخدامك لمنصة AI SCOUT، فإنك توافق على الالتزام بالشروط والأحكام التالية... المحتوى المنشور هنا هو ملكية فكرية ويمنع إعادة استخدامه لأغراض تجارية دون إذن."
+            robotics: "This article explores the latest advancements in robotic surgery... How can AI reduce human error? And what are the ethical challenges facing these technologies?",
+            ethics: "When we talk about machine consciousness, we find ourselves facing a major philosophical dilemma... AI doesn't have a heart, but can it simulate human empathy?",
+            cities: "By 2030, buildings will be connected to a central network that manages energy automatically... Cars will talk to traffic lights, and congestion will be eliminated.",
+            privacy: "At AI SCOUT, we are committed to protecting your data. we use 256-bit encryption to ensure the confidentiality of your browsing.",
+            terms: "By using AI SCOUT, you agree to comply with the following terms... Content published here is intellectual property."
         };
 
-        // وظائف المنبثقات (Modals)
         function openModal(title, contentKey, imgSrc) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-content').innerText = articleData[contentKey];
@@ -169,7 +165,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // إخفاء اللودر
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const loader = document.getElementById('loader');
