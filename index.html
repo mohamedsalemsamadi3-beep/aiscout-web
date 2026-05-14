@@ -17,6 +17,21 @@
         .glow-cyan { box-shadow: 0 0 20px rgba(0, 255, 242, 0.15); border: 1px solid rgba(0, 255, 242, 0.2); }
         .modal-blur { backdrop-filter: blur(15px); background: rgba(0, 0, 0, 0.9); }
         .card-gradient { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%); }
+
+        /* --- New: Scroll Reveal Styles --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .input-glow:focus {
+            box-shadow: 0 0 15px rgba(0, 255, 242, 0.3);
+            border-color: #00fff2;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -55,6 +70,16 @@
         </div>
     </div>
 
+    <div id="static-modal" class="fixed inset-0 z-[70] hidden modal-blur p-4 flex items-center justify-center">
+        <div class="max-w-2xl w-full bg-zinc-900 border border-zinc-800 rounded-3xl p-8 relative shadow-2xl">
+            <button onclick="closeStaticModal()" class="absolute top-4 right-4 text-zinc-500 hover:text-[#00fff2]">
+                <i data-lucide="x"></i>
+            </button>
+            <div id="static-modal-content" class="text-zinc-300 space-y-4">
+                </div>
+        </div>
+    </div>
+
     <header class="p-6 sticky top-0 bg-black/60 backdrop-blur-lg border-b border-white/5 z-40">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
@@ -87,14 +112,30 @@
             </div>
     </section>
 
+    <section class="py-20 px-6 border-t border-zinc-900 reveal">
+        <div class="max-w-4xl mx-auto bg-zinc-900/50 p-10 rounded-[40px] border border-[#00fff2]/10 text-center glow-cyan">
+            <i data-lucide="mail" class="text-[#00fff2] w-12 h-12 mx-auto mb-6"></i>
+            <h2 class="text-3xl font-bold mb-4 uppercase italic">Join the Intelligence Feed</h2>
+            <p class="text-zinc-500 mb-8 max-w-md mx-auto">Get the latest AI reports and architectural insights directly to your terminal.</p>
+            <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Subscribed!')">
+                <input type="email" placeholder="ENTER_EMAIL_ADDRESS" class="flex-1 bg-black border border-zinc-800 rounded-full px-6 py-4 text-sm focus:outline-none input-glow transition-all text-white">
+                <button class="bg-[#00fff2] text-black px-8 py-4 rounded-full font-black uppercase text-xs hover:scale-105 transition-transform">Activate</button>
+            </form>
+        </div>
+    </section>
+
     <footer class="py-20 border-t border-zinc-900 text-center">
+        <div class="flex justify-center gap-8 mb-6 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+            <a href="javascript:void(0)" onclick="openStaticModal('privacy')" class="hover:text-[#00fff2] transition-colors">Privacy Policy</a>
+            <a href="javascript:void(0)" onclick="openStaticModal('contact')" class="hover:text-[#00fff2] transition-colors">Contact Terminal</a>
+        </div>
         <p class="text-zinc-700 text-[10px] font-bold uppercase tracking-[0.5em]">AI SCOUT • Neural Network Content Platform</p>
     </footer>
 
     <script>
         lucide.createIcons();
 
-        // --- DATABASE: UPDATED WITH COMPLETE REPORT 01 CONTENT & PODCAST FILES ---
+        // --- DATABASE ---
         const articles = [
             {
                 id: 'sovereign-foundation',
@@ -102,38 +143,18 @@
                 category: 'System Architecture',
                 image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000',
                 description: `
-                    <div class="space-y-5 text-zinc-300 font-light leading-relaxed">
+                    <div class="space-y-5 text-zinc-300 font-light leading-relaxed text-left">
                         <div class="border-b border-zinc-800 pb-4">
                             <p class="text-[#00fff2] font-mono text-xs tracking-widest uppercase mb-1">(System Architecture & Core Integrity)</p>
-                            <p class="text-xs font-mono text-zinc-400">Status: <span class="text-white font-bold">Operational / Fortified</span> | Level: <span class="text-[#00fff2] font-bold">Sovereign</span></p>
-                            <p class="text-xs font-mono text-zinc-400 mt-1">Objective: <span class="text-white font-bold">Structural Integrity.</span></p>
+                            <p class="text-xs font-mono text-zinc-400">Status: <span class="text-white font-bold">Operational</span> | Level: <span class="text-[#00fff2] font-bold">Sovereign</span></p>
                         </div>
-
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-2">1. The Structural Audit: "The Fragility Felony"</h3>
-                            <p class="mb-3">Most digital architectures are built on "Technical Sand." Relying on fragmented, disconnected AI tools creates a "Security Vacuum" and massive "Data Leakage."</p>
-                            <p class="mb-3">A castle without a unified blueprint is not a fortress; it is a target. The first felony in digital scaling is the lack of a centralized command structure.</p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-2">2. The Command Protocol: "The Sovereign Gatekeeper"</h3>
-                            <p class="mb-3">In the AI SCOUT ecosystem, we do not recognize "Tools"; we recognize "Functional Units." Report 01 establishes the Master Workflow Integration. This is the "Nervous System" of your fortress.</p>
-                            <p class="mb-4">Every data pulse, from lead generation to final delivery, must be routed through a verified, encrypted, and automated sequence.</p>
-                            
-                            <blockquote class="border-l-2 border-[#00fff2] pl-4 py-3 bg-black/30 rounded-r-xl italic text-zinc-400 text-sm">
-                                "To transition from theoretical foundation to architectural engineering, the following schematic represents the 'Nervous System' of the AI SCOUT fortress. This activation of the Sovereign Gatekeeper Protocol links all functional units into an automated path, ensuring absolute system integrity and eliminating the 'Fragility Felony' forever.”
-                            </blockquote>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-2">3. The Defensive Strategy: "Zero-Latency Execution"</h3>
-                            <p class="mb-3">By automating the foundational layers, we eliminate human error—the weakest link in any perimeter. We transform the "Chaos of Choice" into a "Hierarchy of Execution." Your system no longer "responds"; it "anticipates."</p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-2">4. The ROI Verdict: "Architectural Supremacy"</h3>
-                            <p class="mb-3">Structural integrity is the primary driver of market velocity. By fortifying the foundation, we reduce operational drag by 60%, ensuring that every subsequent report (02 through 21) sits on an inviolable bedrock of automated power.</p>
-                        </div>
+                        <h3 class="text-xl font-bold text-white italic">1. The Structural Audit</h3>
+                        <p>Most digital architectures are built on "Technical Sand." Relying on fragmented, disconnected AI tools creates a "Security Vacuum."</p>
+                        <blockquote class="border-l-2 border-[#00fff2] pl-4 py-2 bg-black/30 italic text-sm">
+                            "A castle without a unified blueprint is not a fortress; it is a target."
+                        </blockquote>
+                        <h3 class="text-xl font-bold text-white italic">2. The Command Protocol</h3>
+                        <p>Every data pulse must be routed through a verified, encrypted, and automated sequence.</p>
                     </div>
                 `,
                 audio: 'podcast1.mp3'
@@ -143,13 +164,7 @@
                 title: 'REPORT 02: STRATEGIC SCALING',
                 category: 'Growth Protocol',
                 image: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=2000',
-                description: `
-                    <div class="space-y-4 text-zinc-300 font-light leading-relaxed">
-                        <h3 class="text-xl font-bold text-white">Scaling Without Fragility</h3>
-                        <p>In this report, we explore how to expand the AI SCOUT network without compromising the structural integrity established in Report 01.</p>
-                        <p>Focusing on zero-latency execution and the removal of the human error link.</p>
-                    </div>
-                `,
+                description: `<p class="text-left">Details for Report 02 coming soon...</p>`,
                 audio: 'Podcast2.mp3'
             }
         ];
@@ -158,19 +173,19 @@
         const grid = document.getElementById('articles-grid');
         articles.forEach(art => {
             grid.innerHTML += `
-                <div onclick="openModal('${art.id}')" class="group relative h-[450px] rounded-[40px] overflow-hidden cursor-pointer glow-cyan transition-all hover:-translate-y-2">
+                <div onclick="openModal('${art.id}')" class="reveal group relative h-[450px] rounded-[40px] overflow-hidden cursor-pointer glow-cyan transition-all hover:-translate-y-2">
                     <img src="${art.image}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                     <div class="absolute inset-0 card-gradient"></div>
-                    <div class="absolute bottom-0 p-8 w-full">
+                    <div class="absolute bottom-0 p-8 w-full text-left">
                         <span class="bg-[#00fff2] text-black text-[10px] font-black px-3 py-1 rounded-full uppercase mb-4 inline-block">${art.category}</span>
                         <h3 class="text-2xl font-bold leading-tight group-hover:text-[#00fff2] transition-colors">${art.title}</h3>
-                        <p class="text-zinc-400 text-sm mt-2 line-clamp-2 font-light">Click to read article & listen to podcast</p>
+                        <p class="text-zinc-400 text-sm mt-2 line-clamp-2 font-light italic">Click to expand system intelligence report.</p>
                     </div>
                 </div>
             `;
         });
 
-        // AUDIO PLAYER LOGIC
+        // AUDIO LOGIC
         const audio = document.getElementById('main-audio');
         const playBtn = document.getElementById('play-pause-btn');
         const seekSlider = document.getElementById('seek-slider');
@@ -201,7 +216,7 @@
             return `${min}:${sec < 10 ? '0' : ''}${sec}`;
         }
 
-        // MODAL LOGIC (Updated to use innerHTML for rendering rich HTML text perfectly)
+        // MODAL LOGIC
         function openModal(id) {
             const art = articles.find(a => a.id === id);
             document.getElementById('modal-title').innerText = art.title;
@@ -219,7 +234,53 @@
             audio.pause();
         }
 
+        // --- NEW: STATIC MODALS & SCROLL REVEAL LOGIC ---
+        const staticData = {
+            privacy: `
+                <h2 class="text-2xl font-black text-[#00fff2] mb-4 uppercase italic">Privacy Protocol</h2>
+                <p class="text-sm leading-relaxed">Your data is treated as sovereign assets. AI SCOUT does not track personal identifiers without explicit encryption keys. All neural telemetry is stored locally on your device session.</p>
+                <ul class="list-disc list-inside text-xs space-y-2 mt-4 text-zinc-500 font-mono">
+                    <li>Zero-latency data encryption.</li>
+                    <li>No third-party data leakage.</li>
+                    <li>Inviolable user anonymity.</li>
+                </ul>
+            `,
+            contact: `
+                <h2 class="text-2xl font-black text-[#00fff2] mb-4 uppercase italic">System Communication</h2>
+                <p class="text-sm mb-6 text-zinc-400">Establish a direct link with the AI SCOUT core terminal.</p>
+                <div class="space-y-4">
+                    <input type="text" placeholder="SUBJECT" class="w-full bg-black border border-zinc-800 rounded-xl p-3 text-xs focus:outline-none border-[#00fff2]/30 text-white">
+                    <textarea placeholder="MESSAGE_DATA" rows="4" class="w-full bg-black border border-zinc-800 rounded-xl p-3 text-xs focus:outline-none border-[#00fff2]/30 text-white"></textarea>
+                    <button class="w-full bg-zinc-800 text-[#00fff2] py-3 rounded-xl font-bold uppercase text-[10px] hover:bg-[#00fff2] hover:text-black transition-all">Transmit Data</button>
+                </div>
+            `
+        };
+
+        function openStaticModal(type) {
+            document.getElementById('static-modal-content').innerHTML = staticData[type];
+            document.getElementById('static-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeStaticModal() {
+            document.getElementById('static-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Intersection Observer for Animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
         window.onload = () => {
+            // Apply reveal to elements
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+            
             setTimeout(() => {
                 document.getElementById('loader').style.opacity = '0';
                 setTimeout(() => document.getElementById('loader').style.display = 'none', 700);
