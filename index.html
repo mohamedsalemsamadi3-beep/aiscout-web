@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI SCOUT | Intelligent Exploration</title>
+    <title>AI SCOUT | Intelligent Exploration Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', system-ui, sans-serif; }
         .hero-gradient { 
             background: linear-gradient(to bottom, rgba(5,5,5,0.7), #050505), 
-                        url('https://images.unsplash.com/photo-1620712943543-bcc4638d9f8e?q=80&w=2000'); /* صورة الهيرو الرئيسية */
+                        url('https://images.unsplash.com/photo-1620712943543-bcc4638d9f8e?q=80&w=2000');
             background-size: cover;
             background-position: center;
         }
@@ -19,11 +19,11 @@
         .card-gradient { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%); }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
     <div id="loader" class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center transition-opacity duration-700">
         <div class="w-16 h-16 border-4 border-[#00fff2] border-t-transparent rounded-full animate-spin mb-4 shadow-[0_0_15px_#00fff2]"></div>
-        <p class="text-[#00fff2] tracking-[0.5em] font-black animate-pulse">AI SCOUT</p>
+        <p class="text-[#00fff2] tracking-[0.5em] font-black animate-pulse uppercase">AI SCOUT</p>
     </div>
 
     <div id="article-modal" class="fixed inset-0 z-[60] hidden modal-blur p-4 md:p-10 overflow-y-auto">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
 
-                <div id="modal-content" class="text-zinc-300 leading-relaxed text-lg space-y-4 border-t border-zinc-800 pt-6 font-light"></div>
+                <div id="modal-content" class="border-t border-zinc-800 pt-6"></div>
             </div>
         </div>
     </div>
@@ -94,31 +94,63 @@
     <script>
         lucide.createIcons();
 
-        // --- DATABASE: ADD YOUR HERO IMAGES HERE ---
+        // --- DATABASE: UPDATED WITH COMPLETE REPORT 01 CONTENT & PODCAST FILES ---
         const articles = [
             {
-                id: 'gen-ai',
-                title: 'The Generative AI Revolution',
-                category: 'Intelligence',
-                image: 'https://images.unsplash.com/photo-1675271591211-126ad94e495d?w=800', // صورة الهيرو للبطاقة
-                description: 'Generative AI is not just a tool; it is a fundamental shift in how we create, think, and solve complex global problems...',
-                audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
+                id: 'sovereign-foundation',
+                title: 'REPORT 01: THE SOVEREIGN FOUNDATION',
+                category: 'System Architecture',
+                image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000',
+                description: `
+                    <div class="space-y-5 text-zinc-300 font-light leading-relaxed">
+                        <div class="border-b border-zinc-800 pb-4">
+                            <p class="text-[#00fff2] font-mono text-xs tracking-widest uppercase mb-1">(System Architecture & Core Integrity)</p>
+                            <p class="text-xs font-mono text-zinc-400">Status: <span class="text-white font-bold">Operational / Fortified</span> | Level: <span class="text-[#00fff2] font-bold">Sovereign</span></p>
+                            <p class="text-xs font-mono text-zinc-400 mt-1">Objective: <span class="text-white font-bold">Structural Integrity.</span></p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">1. The Structural Audit: "The Fragility Felony"</h3>
+                            <p class="mb-3">Most digital architectures are built on "Technical Sand." Relying on fragmented, disconnected AI tools creates a "Security Vacuum" and massive "Data Leakage."</p>
+                            <p class="mb-3">A castle without a unified blueprint is not a fortress; it is a target. The first felony in digital scaling is the lack of a centralized command structure.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">2. The Command Protocol: "The Sovereign Gatekeeper"</h3>
+                            <p class="mb-3">In the AI SCOUT ecosystem, we do not recognize "Tools"; we recognize "Functional Units." Report 01 establishes the Master Workflow Integration. This is the "Nervous System" of your fortress.</p>
+                            <p class="mb-4">Every data pulse, from lead generation to final delivery, must be routed through a verified, encrypted, and automated sequence.</p>
+                            
+                            <blockquote class="border-l-2 border-[#00fff2] pl-4 py-3 bg-black/30 rounded-r-xl italic text-zinc-400 text-sm">
+                                "To transition from theoretical foundation to architectural engineering, the following schematic represents the 'Nervous System' of the AI SCOUT fortress. This activation of the Sovereign Gatekeeper Protocol links all functional units into an automated path, ensuring absolute system integrity and eliminating the 'Fragility Felony' forever.”
+                            </blockquote>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">3. The Defensive Strategy: "Zero-Latency Execution"</h3>
+                            <p class="mb-3">By automating the foundational layers, we eliminate human error—the weakest link in any perimeter. We transform the "Chaos of Choice" into a "Hierarchy of Execution." Your system no longer "responds"; it "anticipates."</p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">4. The ROI Verdict: "Architectural Supremacy"</h3>
+                            <p class="mb-3">Structural integrity is the primary driver of market velocity. By fortifying the foundation, we reduce operational drag by 60%, ensuring that every subsequent report (02 through 21) sits on an inviolable bedrock of automated power.</p>
+                        </div>
+                    </div>
+                `,
+                audio: 'podcast1.mp3'
             },
             {
-                id: 'robotics',
-                title: 'Robotics in 2026: The New Era',
-                category: 'Hardware',
-                image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800', // صورة الهيرو للبطاقة
-                description: 'From humanoid assistants to advanced surgical arms, the physical manifestation of AI is evolving faster than predicted...',
-                audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
-            },
-            {
-                id: 'neural',
-                title: 'Neural Mapping & Consciousness',
-                category: 'Science',
-                image: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800', // صورة الهيرو للبطاقة
-                description: 'Can we upload a brain to the cloud? Scientists are mapping the human connectome to bridge the gap between biology and silicon...',
-                audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3'
+                id: 'report-02',
+                title: 'REPORT 02: STRATEGIC SCALING',
+                category: 'Growth Protocol',
+                image: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=2000',
+                description: `
+                    <div class="space-y-4 text-zinc-300 font-light leading-relaxed">
+                        <h3 class="text-xl font-bold text-white">Scaling Without Fragility</h3>
+                        <p>In this report, we explore how to expand the AI SCOUT network without compromising the structural integrity established in Report 01.</p>
+                        <p>Focusing on zero-latency execution and the removal of the human error link.</p>
+                    </div>
+                `,
+                audio: 'Podcast2.mp3'
             }
         ];
 
@@ -169,11 +201,11 @@
             return `${min}:${sec < 10 ? '0' : ''}${sec}`;
         }
 
-        // MODAL LOGIC
+        // MODAL LOGIC (Updated to use innerHTML for rendering rich HTML text perfectly)
         function openModal(id) {
             const art = articles.find(a => a.id === id);
             document.getElementById('modal-title').innerText = art.title;
-            document.getElementById('modal-content').innerText = art.description;
+            document.getElementById('modal-content').innerHTML = art.description;
             document.getElementById('modal-img').src = art.image;
             audio.src = art.audio;
             document.getElementById('article-modal').classList.remove('hidden');
