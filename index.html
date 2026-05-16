@@ -65,7 +65,7 @@
             <div class="p-8 text-left">
                 <h2 id="modal-title" class="text-4xl font-black text-[#00fff2] mb-6 tracking-tighter"></h2>
                 
-                <div class="bg-black/60 p-6 rounded-2xl mb-8 border border-[#00fff2]/20 flex items-center gap-5">
+                <div id="audio-player-container" class="bg-black/60 p-6 rounded-2xl mb-8 border border-[#00fff2]/20 flex items-center gap-5">
                     <button id="play-pause-btn" onclick="toggleAudio()" class="bg-[#00fff2] text-black w-14 h-14 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                         <i id="play-icon" data-lucide="play" class="fill-current w-6 h-6"></i>
                     </button>
@@ -272,129 +272,128 @@
                 audio: 'podcast1.mp3'
             },
             {
-        id: 'perimeter-defense',
-        title: 'REPORT 2: THE PERIMETER DEFENSE',
-        category: 'Security Layers',
-        image: 'hero2.png',
-        description: `
-            <div class="space-y-5 text-zinc-300 font-light leading-relaxed text-left">
-                <div class="border-b border-zinc-800 pb-4">
-                    <p class="text-[#00fff2] font-mono text-xs tracking-widest uppercase mb-1">(Edge Security, DDoS Mitigation & Global Ingestion Proxy)</p>
-                    <p class="text-xs font-mono text-zinc-400">Status: <span class="text-[#00fff2] font-bold">Shield Active / Inpenetrable</span> | Level: <span class="text-white font-bold">Strategic Sovereign</span></p>
-                    <p class="text-xs font-mono text-zinc-400 mt-1">Strategic Tool Deployment: <span class="text-[#00fff2] font-bold">Cloudflare Enterprise Proxy</span></p>
-                </div>
+                id: 'perimeter-defense',
+                title: 'REPORT 2: THE PERIMETER DEFENSE',
+                category: 'Security Layers',
+                image: 'hero2.png',
+                description: `
+                    <div class="space-y-5 text-zinc-300 font-light leading-relaxed text-left">
+                        <div class="border-b border-zinc-800 pb-4">
+                            <p class="text-[#00fff2] font-mono text-xs tracking-widest uppercase mb-1">(Edge Security, DDoS Mitigation & Global Ingestion Proxy)</p>
+                            <p class="text-xs font-mono text-zinc-400">Status: <span class="text-[#00fff2] font-bold">Shield Active / Inpenetrable</span> | Level: <span class="text-white font-bold">Strategic Sovereign</span></p>
+                            <p class="text-xs font-mono text-zinc-400 mt-1">Strategic Tool Deployment: <span class="text-[#00fff2] font-bold">Cloudflare Enterprise Proxy</span></p>
+                        </div>
 
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-2 italic">1. The Infrastructure Felony: "The Naked Server Vulnerability"</h3>
-                    <p class="mb-3">Hosting your high-ticket business assets, client databases, or web applications without an elite edge proxy is an <span class="text-[#00fff2] font-bold">Operational Felony</span>. Leaving your raw server IP exposed to the public internet is the digital equivalent of leaving your vault door wide open in a high-crime district. You are practically begging malicious bots, scrapers, and competitors to launch DDoS attacks, corrupt your data, and completely paralyze your operations, bleeding thousands of dollars in downtime and crushing your market authority.</p>
-                </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 italic">1. The Infrastructure Felony: "The Naked Server Vulnerability"</h3>
+                            <p class="mb-3">Hosting your high-ticket business assets, client databases, or web applications without an elite edge proxy is an <span class="text-[#00fff2] font-bold">Operational Felony</span>. Leaving your raw server IP exposed to the public internet is the digital equivalent of leaving your vault door wide open in a high-crime district. You are practically begging malicious bots, scrapers, and competitors to launch DDoS attacks, corrupt your data, and completely paralyze your operations, bleeding thousands of dollars in downtime and crushing your market authority.</p>
+                        </div>
 
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-2 italic">2. The Containment Protocol: "The Zero-Trust Defiance Matrix"</h3>
-                    <p class="mb-3">Report 2 deploys an iron-clad perimeter shield. We route 100% of your global incoming traffic through an intelligent Anycast network. This protocol scrubs dirty requests at the edge, obfuscates your true infrastructure origin, and caches static data globally. Simultaneously, we enforce strict Web Application Firewall (WAF) rules to instantly isolate threats while accelerating your load times to absolute zero friction. Your platform becomes invisible to attackers, but blazing fast for legitimate high-ticket clients.</p>
-                </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 italic">2. The Containment Protocol: "The Zero-Trust Defiance Matrix"</h3>
+                            <p class="mb-3">Report 2 deploys an iron-clad perimeter shield. We route 100% of your global incoming traffic through an intelligent Anycast network. This protocol scrubs dirty requests at the edge, obfuscates your true infrastructure origin, and caches static data globally. Simultaneously, we enforce strict Web Application Firewall (WAF) rules to instantly isolate threats while accelerating your load times to absolute zero friction. Your platform becomes invisible to attackers, but blazing fast for legitimate high-ticket clients.</p>
+                        </div>
 
-                <div class="bg-black/50 p-6 rounded-2xl border border-[#00fff2]/20 relative overflow-hidden text-center reveal-slow glow-cyan-small">
-                    <h3 class="text-lg font-bold text-[#00fff2] mb-2 uppercase tracking-tighter">Shield Your Digital Empire</h3>
-                    <p class="text-sm italic text-zinc-400 leading-relaxed mb-4">
-                        "Do not wait for a catastrophic breach to secure your sovereignty. Intercept threats before they hit your server and achieve lightning-fast global speed. Deploy your security perimeter below."
-                    </p>
-                    <a href="YOUR_CLOUDFLARE_AFFILIATE_LINK_HERE" target="_blank" class="inline-block bg-transparent border border-[#00fff2] text-[#00fff2] font-mono text-xs uppercase tracking-widest px-6 py-3 rounded transition-all duration-300 hover:bg-[#00fff2] hover:text-black hover:shadow-[0_0_15px_#00fff2] font-bold">
-                        [ ENFORCE PERIMETER SHIELD NOW ]
-                    </a>
-                </div>
+                        <div class="bg-black/50 p-6 rounded-2xl border border-[#00fff2]/20 relative overflow-hidden text-center reveal-slow glow-cyan-small">
+                            <h3 class="text-lg font-bold text-[#00fff2] mb-2 uppercase tracking-tighter">Shield Your Digital Empire</h3>
+                            <p class="text-sm italic text-zinc-400 leading-relaxed mb-4">
+                                "Do not wait for a catastrophic breach to secure your sovereignty. Intercept threats before they hit your server and achieve lightning-fast global speed. Deploy your security perimeter below."
+                            </p>
+                            <a href="YOUR_CLOUDFLARE_AFFILIATE_LINK_HERE" target="_blank" class="inline-block bg-transparent border border-[#00fff2] text-[#00fff2] font-mono text-xs uppercase tracking-widest px-6 py-3 rounded transition-all duration-300 hover:bg-[#00fff2] hover:text-black hover:shadow-[0_0_15px_#00fff2] font-bold">
+                                [ ENFORCE PERIMETER SHIELD NOW ]
+                            </a>
+                        </div>
 
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-2 italic">3. The ROI Verdict: "Unbreakable Sovereignty & Speed Leadership"</h3>
-                    <p>The strategic return on deploying this network edge is absolute peace of mind and technical dominance. By eliminating bad automated bot traffic, you slash server bandwidth costs by up to 60%. Your site speed optimizes instantly, boosting your SEO and retaining high-value traffic that would otherwise bounce due to slow loading. This report turns your infrastructure into an unbreakable digital fortress, securing your data assets while maintaining 100% uptime under any threat condition.</p>
-                </div>
-            </div>
-        `,
-        audio: 'podcast2.mp3'
-    },
-         {
-        id: 'sovereign-client-acquisition',
-        title: 'REPORT 3: THE SOVEREIGN CLIENT ACQUISITION',
-        category: 'Client Infrastructure',
-        image: 'hero3.png',
-        description: `
-            <div class="space-y-5 text-zinc-300 font-light leading-relaxed text-left">
-                <div class="border-b border-zinc-800 pb-4">
-                    <p class="text-[#00fff2] font-mono text-xs tracking-widest uppercase mb-1">(CRM Hegemony, Funnel Synthesis & High-Ticket Pipeline Control)</p>
-                    <p class="text-xs font-mono text-zinc-400">Status: <span class="text-[#00fff2] font-bold">Inbound Locked / Dominant</span> | Level: <span class="text-white font-bold">Command Center</span></p>
-                    <p class="text-xs font-mono text-zinc-400 mt-1">Strategic Tool Deployment: <span class="text-[#00fff2] font-bold">GoHighLevel Sovereign OS</span></p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-2 italic">1. The Operational Felony: "The Fragmented SaaS Tax & Pipeline Leaks"</h3>
-                    <p class="mb-3">Paying multiple isolated monthly subscriptions for landing pages, email marketing, SMS automation, booking calendars, and CRMs is a <span class="text-[#00fff2] font-bold">Financial and Operational Felony</span>. By scattering your high-ticket client data across five different platforms that barely speak to each other, you are actively sabotaging your conversion rates. Leads are dropping through the cracks of your fragmented pipeline, and you are paying a massive "SaaS Tax" to tech conglomerates for the privilege of running an inefficient, leaky business engine.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-2 italic">2. The Monolith Protocol: "The Unified Acquisition Core"</h3>
-                    <p class="mb-3">Report 3 enforces absolute commercial integration. We dissolve your fragmented software pile and replace it with a single, weaponized <strong>Acquisition Monolith</strong>. This protocol unifies your elite high-converting funnels, automated 2-way nurturing sequences (Email, SMS, WhatsApp), smart AI appointment booking calendars, and customer data into a single operational view. From the second a high-value client interacts with your brand to the final invoice deployment, every touchpoint is tracked, optimized, and automated through rigid algorithmic logic.</p>
-                </div>
-
-                <div class="bg-black/50 p-6 rounded-2xl border border-[#00fff2]/20 relative overflow-hidden text-center reveal-slow glow-cyan-small">
-                    <h3 class="text-lg font-bold text-[#00fff2] mb-2 uppercase tracking-tighter">Consolidate Your Commercial Might</h3>
-                    <p class="text-sm italic text-zinc-400 leading-relaxed mb-4">
-                        "Stop bleeding revenue through disconnected marketing systems. Stop paying the software tax. Capture, nurture, and close elite clients inside one unbreakable infrastructure. Deploy your command core below."
-                    </p>
-                    <a href="YOUR_GOHIGHLEVEL_AFFILIATE_LINK_HERE" target="_blank" class="inline-block bg-transparent border border-[#00fff2] text-[#00fff2] font-mono text-xs uppercase tracking-widest px-6 py-3 rounded transition-all duration-300 hover:bg-[#00fff2] hover:text-black hover:shadow-[0_0_15px_#00fff2] font-bold">
-                        [ DEPLOY ACQUISITION MONOLITH NOW ]
-                    </a>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-2 italic">3. The ROI Verdict: "SaaS Expense Liquidation & Maximized Conversion"</h3>
-                    <p>The return on this absolute software consolidation is immediate and devastating to your overhead. By liquidating up to 7 disconnected software tools, you instantly slash monthly operational expenses by 70%. Simultaneously, your pipeline conversion rate surges because your communication sequences execute with absolute contextual relevance. This report turns your sales cycle into a highly automated, hyper-efficient conversion machine that traps and closes high-ticket revenue without human bottlenecks.</p>
-                </div>
-            </div>
-        `,
-        audio: 'podcast3.mp3'
-    },   
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 italic">3. The ROI Verdict: "Unbreakable Sovereignty & Speed Leadership"</h3>
+                            <p>The strategic return on deploying this network edge is absolute peace of mind and technical dominance. By eliminating bad automated bot traffic, you slash server bandwidth costs by up to 60%. Your site speed optimizes instantly, boosting your SEO and retaining high-value traffic that would otherwise bounce due to slow loading. This report turns your infrastructure into an unbreakable digital fortress, securing your data assets while maintaining 100% uptime under any threat condition.</p>
+                        </div>
+                    </div>
+                `,
+                audio: 'podcast2.mp3'
+            },
             {
-        id: 'synthetic-interface-forge',
-        title: 'REPORT 4: THE SYNTHETIC INTERFACE FORGE',
-        category: 'Rapid Deployment',
-        image: 'hero4.png',
-        description: `
-            <div class="space-y-5 text-zinc-300 font-light leading-relaxed text-left">
-                <div class="border-b border-zinc-800 pb-4">
-                    <p class="text-[#00fff2] font-mono text-xs tracking-widest uppercase mb-1">(Generative UI Synthesis, Instant Frontend Deployment & MVP Velocity)</p>
-                    <p class="text-xs font-mono text-zinc-400">Status: <span class="text-[#00fff2] font-bold">Compiler Online / Hyper-Velocity</span> | Level: <span class="text-white font-bold">Tactical Deployment</span></p>
-                    <p class="text-xs font-mono text-zinc-400 mt-1">Strategic Tool Deployment: <span class="text-[#00fff2] font-bold">v0.dev Generative Interface Engine</span></p>
-                </div>
+                id: 'sovereign-client-acquisition',
+                title: 'REPORT 3: THE SOVEREIGN CLIENT ACQUISITION',
+                category: 'Client Infrastructure',
+                image: 'hero3.png',
+                description: `
+                    <div class="space-y-5 text-zinc-300 font-light leading-relaxed text-left">
+                        <div class="border-b border-zinc-800 pb-4">
+                            <p class="text-[#00fff2] font-mono text-xs tracking-widest uppercase mb-1">(CRM Hegemony, Funnel Synthesis & High-Ticket Pipeline Control)</p>
+                            <p class="text-xs font-mono text-zinc-400">Status: <span class="text-[#00fff2] font-bold">Inbound Locked / Dominant</span> | Level: <span class="text-white font-bold">Command Center</span></p>
+                            <p class="text-xs font-mono text-zinc-400 mt-1">Strategic Tool Deployment: <span class="text-[#00fff2] font-bold">GoHighLevel Sovereign OS</span></p>
+                        </div>
 
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-2 italic">1. The Development Felony: "The Bloated Frontend Sweatshop"</h3>
-                    <p class="mb-3">Burning thousands of dollars and wasting weeks of critical market time waiting for traditional frontend developers to manually code basic web layouts and user interfaces is a <span class="text-[#00fff2] font-bold">Commercial Felony</span>. In the AI SCOUT doctrine, pixel-pushing by human hands is an obsolete, low-leverage drag on your empire. Every day your product or landing page remains trapped in a human development pipeline is a day your competitors capture your market share. Inertia is your biggest tax, and manual design is your biggest bottleneck.</p>
-                </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 italic">1. The Operational Felony: "The Fragmented SaaS Tax & Pipeline Leaks"</h3>
+                            <p class="mb-3">Paying multiple isolated monthly subscriptions for landing pages, email marketing, SMS automation, booking calendars, and CRMs is a <span class="text-[#00fff2] font-bold">Financial and Operational Felony</span>. By scattering your high-ticket client data across five different platforms that barely speak to each other, you are actively sabotaging your conversion rates. Leads are dropping through the cracks of your fragmented pipeline, and you are paying a massive "SaaS Tax" to tech conglomerates for the privilege of running an inefficient, leaky business engine.</p>
+                        </div>
 
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-2 italic">2. The Forge Protocol: "The Instant Code Manifestation"</h3>
-                    <p class="mb-3">Report 4 deploys a warp-speed execution matrix. We replace traditional design-to-code friction with a **Generative Interface Forge**. This protocol translates pure conceptual text prompts into production-ready, highly optimized React, Tailwind CSS, and Shadcn UI components instantly. You do not draft mockups; you command them into existence. The forge synthesizes clean, fully responsive, and visually stunning digital assets in milliseconds, ready to be deployed straight to the edge before your competition even finishes their design brief.</p>
-                </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 italic">2. The Monolith Protocol: "The Unified Acquisition Core"</h3>
+                            <p class="mb-3">Report 3 enforces absolute commercial integration. We dissolve your fragmented software pile and replace it with a single, weaponized <strong>Acquisition Monolith</strong>. This protocol unifies your elite high-converting funnels, automated 2-way nurturing sequences (Email, SMS, WhatsApp), smart AI appointment booking calendars, and customer data into a single operational view. From the second a high-value client interacts with your brand to the final invoice deployment, every touchpoint is tracked, optimized, and automated through rigid algorithmic logic.</p>
+                        </div>
 
-                <div class="bg-black/50 p-6 rounded-2xl border border-[#00fff2]/20 relative overflow-hidden text-center reveal-slow glow-cyan-small">
-                    <h3 class="text-lg font-bold text-[#00fff2] mb-2 uppercase tracking-tighter">Manifest Interfaces at Warp Speed</h3>
-                    <p class="text-sm italic text-zinc-400 leading-relaxed mb-4">
-                        "Stop begging development agencies for slow, overpriced updates. Command your user interfaces into physical code instantly through raw generative intelligence. Deploy your interface forge below."
-                    </p>
-                    <a href="YOUR_V0_AFFILIATE_LINK_HERE" target="_blank" class="inline-block bg-transparent border border-[#00fff2] text-[#00fff2] font-mono text-xs uppercase tracking-widest px-6 py-3 rounded transition-all duration-300 hover:bg-[#00fff2] hover:text-black hover:shadow-[0_0_15px_#00fff2] font-bold">
-                        [ LAUNCH INTERFACE FORGE NOW ]
-                    </a>
-                </div>
+                        <div class="bg-black/50 p-6 rounded-2xl border border-[#00fff2]/20 relative overflow-hidden text-center reveal-slow glow-cyan-small">
+                            <h3 class="text-lg font-bold text-[#00fff2] mb-2 uppercase tracking-tighter">Consolidate Your Commercial Might</h3>
+                            <p class="text-sm italic text-zinc-400 leading-relaxed mb-4">
+                                "Stop bleeding revenue through disconnected marketing systems. Stop paying the software tax. Capture, nurture, and close elite clients inside one unbreakable infrastructure. Deploy your command core below."
+                            </p>
+                            <a href="YOUR_GOHIGHLEVEL_AFFILIATE_LINK_HERE" target="_blank" class="inline-block bg-transparent border border-[#00fff2] text-[#00fff2] font-mono text-xs uppercase tracking-widest px-6 py-3 rounded transition-all duration-300 hover:bg-[#00fff2] hover:text-black hover:shadow-[0_0_15px_#00fff2] font-bold">
+                                [ DEPLOY ACQUISITION MONOLITH NOW ]
+                            </a>
+                        </div>
 
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-2 italic">3. The ROI Verdict: "Zero Design Overhead & Infinite Velocity"</h3>
-                    <p>The return on generative frontend synthesis is absolute market disruption. By eliminating 90% of traditional design and layout coding hours, your time-to-market drops from weeks to minutes. You liquidate bloated design overhead and empower your core infrastructure to build, test, and ship premium web assets at zero marginal cost. This report turns your product deployment pipeline into a hyper-velocity weapon that out-paces and out-ships the entire market with surgical technical precision.</p>
-                </div>
-            </div>
-        `,
-        audio: 'podcast4.mp3'
-    },
-           
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 italic">3. The ROI Verdict: "SaaS Expense Liquidation & Maximized Conversion"</h3>
+                            <p>The return on this absolute software consolidation is immediate and devastating to your overhead. By liquidating up to 7 disconnected software tools, you instantly slash monthly operational expenses by 70%. Simultaneously, your pipeline conversion rate surges because your communication sequences execute with absolute contextual relevance. This report turns your sales cycle into a highly automated, hyper-efficient conversion machine that traps and closes high-ticket revenue without human bottlenecks.</p>
+                        </div>
+                    </div>
+                `,
+                audio: 'podcast3.mp3'
+            },   
+            {
+                id: 'synthetic-interface-forge',
+                title: 'REPORT 4: THE SYNTHETIC INTERFACE FORGE',
+                category: 'Rapid Deployment',
+                image: 'hero4.png',
+                description: `
+                    <div class="space-y-5 text-zinc-300 font-light leading-relaxed text-left">
+                        <div class="border-b border-zinc-800 pb-4">
+                            <p class="text-[#00fff2] font-mono text-xs tracking-widest uppercase mb-1">(Generative UI Synthesis, Instant Frontend Deployment & MVP Velocity)</p>
+                            <p class="text-xs font-mono text-zinc-400">Status: <span class="text-[#00fff2] font-bold">Compiler Online / Hyper-Velocity</span> | Level: <span class="text-white font-bold">Tactical Deployment</span></p>
+                            <p class="text-xs font-mono text-zinc-400 mt-1">Strategic Tool Deployment: <span class="text-[#00fff2] font-bold">v0.dev Generative Interface Engine</span></p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 italic">1. The Development Felony: "The Bloated Frontend Sweatshop"</h3>
+                            <p class="mb-3">Burning thousands of dollars and wasting weeks of critical market time waiting for traditional frontend developers to manually code basic web layouts and user interfaces is a <span class="text-[#00fff2] font-bold">Commercial Felony</span>. In the AI SCOUT doctrine, pixel-pushing by human hands is an obsolete, low-leverage drag on your empire. Every day your product or landing page remains trapped in a human development pipeline is a day your competitors capture your market share. Inertia is your biggest tax, and manual design is your biggest bottleneck.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 italic">2. The Forge Protocol: "The Instant Code Manifestation"</h3>
+                            <p class="mb-3">Report 4 deploys a warp-speed execution matrix. We replace traditional design-to-code friction with a **Generative Interface Forge**. This protocol translates pure conceptual text prompts into production-ready, highly optimized React, Tailwind CSS, and Shadcn UI components instantly. You do not draft mockups; you command them into existence. The forge synthesizes clean, fully responsive, and visually stunning digital assets in milliseconds, ready to be deployed straight to the edge before your competition even finishes their design brief.</p>
+                        </div>
+
+                        <div class="bg-black/50 p-6 rounded-2xl border border-[#00fff2]/20 relative overflow-hidden text-center reveal-slow glow-cyan-small">
+                            <h3 class="text-lg font-bold text-[#00fff2] mb-2 uppercase tracking-tighter">Manifest Interfaces at Warp Speed</h3>
+                            <p class="text-sm italic text-zinc-400 leading-relaxed mb-4">
+                                "Stop begging development agencies for slow, overpriced updates. Command your user interfaces into physical code instantly through raw generative intelligence. Deploy your interface forge below."
+                            </p>
+                            <a href="YOUR_V0_AFFILIATE_LINK_HERE" target="_blank" class="inline-block bg-transparent border border-[#00fff2] text-[#00fff2] font-mono text-xs uppercase tracking-widest px-6 py-3 rounded transition-all duration-300 hover:bg-[#00fff2] hover:text-black hover:shadow-[0_0_15px_#00fff2] font-bold">
+                                [ LAUNCH INTERFACE FORGE NOW ]
+                            </a>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2 italic">3. The ROI Verdict: "Zero Design Overhead & Infinite Velocity"</h3>
+                            <p>The return on generative frontend synthesis is absolute market disruption. By eliminating 90% of traditional design and layout coding hours, your time-to-market drops from weeks to minutes. You liquidate bloated design overhead and empower your core infrastructure to build, test, and ship premium web assets at zero marginal cost. This report turns your product deployment pipeline into a hyper-velocity weapon that out-paces and out-ships the entire market with surgical technical precision.</p>
+                        </div>
+                    </div>
+                `,
+                audio: 'podcast4.mp3'
+            }
         ];
 
         // 1. BOOT SCREEN SIMULATION
@@ -428,6 +427,7 @@
         // 2. RENDER ARTICLES DYNAMICALLY
         function renderArticles() {
             const grid = document.getElementById('articles-grid');
+            if(!grid) return;
             grid.innerHTML = '';
             articles.forEach(article => {
                 const card = document.createElement('div');
@@ -454,12 +454,13 @@
             initScrollReveal();
         }
 
-        // 3. ARTICLE MODAL SYSTEM
+        // 3. ARTICLE MODAL SYSTEM (REPAIRED FOR DYNAMIC AUDIO HANDLING)
         const audio = document.getElementById('main-audio');
         const playIcon = document.getElementById('play-icon');
         const seekSlider = document.getElementById('seek-slider');
         const currentTimeEl = document.getElementById('current-time');
         const durationEl = document.getElementById('duration');
+        const audioContainer = document.getElementById('audio-player-container');
 
         function openModal(id) {
             const article = articles.find(a => a.id === id);
@@ -469,13 +470,19 @@
             document.getElementById('modal-img').src = article.image;
             document.getElementById('modal-content').innerHTML = article.description;
             
-            if(article.audio) {
+            if (article.audio) {
+                // إظهار مشغل الصوت وإعادة ضبطه عند وجود ملف
+                if(audioContainer) audioContainer.style.display = 'flex';
                 audio.src = article.audio;
                 audio.load();
                 seekSlider.value = 0;
                 currentTimeEl.innerText = "0:00";
                 durationEl.innerText = "0:00";
                 playIcon.setAttribute('data-lucide', 'play');
+            } else {
+                // إخفاء مشغل الصوت تماماً إذا كان التقرير لا يحتوي على ملف صوتي
+                if(audioContainer) audioContainer.style.display = 'none';
+                audio.src = ""; 
             }
             
             document.getElementById('article-modal').classList.remove('hidden');
@@ -487,10 +494,12 @@
             document.getElementById('article-modal').classList.add('hidden');
             document.body.style.overflow = 'auto';
             audio.pause();
+            audio.src = ""; // تفريغ المسار الصوتي لمنع التداخل عند فتح تقرير آخر
         }
 
         // 4. AUDIO PLAYER CONTROLS
         function toggleAudio() {
+            if (!audio.src || audio.src.includes('undefined')) return;
             if (audio.paused) {
                 audio.play();
                 playIcon.setAttribute('data-lucide', 'pause');
