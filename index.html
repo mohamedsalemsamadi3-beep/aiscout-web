@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,35 +18,73 @@
   >
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
       background: #020617;
       overflow-x: hidden;
+      color: white;
     }
 
-    h1, h2, h3, .brand-font {
+    h1,
+    h2,
+    h3,
+    .brand-font {
       font-family: 'Orbitron', sans-serif;
     }
 
     .grid-bg {
       background-image:
-        linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px);
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
       background-size: 40px 40px;
     }
 
     .glass {
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.1);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    .glow {
+      box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+    }
+
+    img {
+      display: block;
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    .report-card {
+      transition: all 0.4s ease;
+    }
+
+    .report-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .tool-card:hover,
+    .podcast-card:hover {
+      transform: translateY(-6px);
+    }
   </style>
 
 </head>
 
-<body class="text-white grid-bg">
+<body class="grid-bg">
 
   <!-- NAVBAR -->
   <header class="fixed top-0 left-0 w-full z-50 border-b border-cyan-500/10 bg-black/40 backdrop-blur-xl">
@@ -59,11 +97,23 @@
 
       <nav class="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.2em] text-gray-300">
 
-        <a href="index.html" class="hover:text-cyan-300 transition">Home</a>
-        <a href="archive.html" class="hover:text-cyan-300 transition">Archive</a>
-        <a href="podcast.html" class="hover:text-cyan-300 transition">Podcast</a>
-        <a href="#tools" class="hover:text-cyan-300 transition">AI Tools</a>
-        <a href="#newsletter" class="hover:text-cyan-300 transition">Newsletter</a>
+        <a href="#" class="hover:text-cyan-300 transition">Home</a>
+
+        <a href="#reports" class="hover:text-cyan-300 transition">
+          Reports
+        </a>
+
+        <a href="#podcasts" class="hover:text-cyan-300 transition">
+          Podcast
+        </a>
+
+        <a href="#tools" class="hover:text-cyan-300 transition">
+          AI Tools
+        </a>
+
+        <a href="#newsletter" class="hover:text-cyan-300 transition">
+          Newsletter
+        </a>
 
       </nav>
 
@@ -76,24 +126,24 @@
 
     <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/20 blur-[160px] rounded-full"></div>
 
-    <div class="max-w-7xl mx-auto relative z-10">
+    <div class="max-w-7xl mx-auto relative z-10 pt-20">
 
       <p class="uppercase tracking-[0.4em] text-cyan-300 text-sm mb-6">
         Autonomous Intelligence Network
       </p>
 
-      <h1 class="text-6xl md:text-8xl font-black uppercase leading-tight mb-10 max-w-5xl">
+      <h1 class="text-5xl md:text-8xl font-black uppercase leading-tight mb-10 max-w-5xl">
         AI SCOUT-INTEL
       </h1>
 
-      <p class="text-xl md:text-2xl text-gray-300 leading-10 max-w-4xl mb-12">
-        Strategic AI intelligence reports, synthetic media systems, automation infrastructure,
-        podcast briefings, and autonomous digital operations.
+      <p class="text-lg md:text-2xl text-gray-300 leading-10 max-w-4xl mb-12">
+        Strategic AI intelligence reports, synthetic media systems,
+        automation infrastructure, podcast briefings, and autonomous digital operations.
       </p>
 
       <a
         href="#reports"
-        class="inline-block px-10 py-5 rounded-full bg-cyan-400 text-black font-bold uppercase tracking-[0.2em] hover:bg-cyan-300 transition"
+        class="inline-block px-10 py-5 rounded-full bg-cyan-400 text-black font-bold uppercase tracking-[0.2em] hover:bg-cyan-300 transition glow"
       >
         Access Reports
       </a>
@@ -135,6 +185,7 @@
       <div class="mb-20 flex flex-col md:flex-row gap-6 items-center justify-between">
 
         <div>
+
           <p class="uppercase tracking-[0.4em] text-cyan-300 text-sm mb-4">
             Intelligence Archive
           </p>
@@ -142,6 +193,7 @@
           <h2 class="text-5xl md:text-6xl font-black uppercase">
             Strategic Reports
           </h2>
+
         </div>
 
         <input
@@ -153,13 +205,15 @@
 
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- GRID -->
+      <div id="reportsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-        <!-- REPORT CARD -->
-        <div class="report-card glass rounded-[30px] overflow-hidden border border-cyan-400/10 hover:border-cyan-300/40 transition">
+        <!-- CARD 1 -->
+        <div class="report-card glass rounded-[30px] overflow-hidden border border-cyan-400/10 hover:border-cyan-300/40">
 
           <img
             src="hero1.png"
+            alt="AI Sovereignty Blueprint"
             class="w-full h-[260px] object-cover"
           >
 
@@ -175,11 +229,11 @@
 
             <div class="flex flex-wrap gap-3 mb-8">
 
-              <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase tracking-[0.2em]">
+              <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase">
                 AI Systems
               </span>
 
-              <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase tracking-[0.2em]">
+              <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase">
                 Automation
               </span>
 
@@ -195,10 +249,13 @@
           </div>
 
         </div>
-     <div class="report-card glass rounded-[30px] overflow-hidden border border-cyan-400/10 hover:border-cyan-300/40 transition">
+
+        <!-- CARD 2 -->
+        <div class="report-card glass rounded-[30px] overflow-hidden border border-cyan-400/10 hover:border-cyan-300/40">
 
           <img
             src="hero2.png"
+            alt="Synthetic Media Warfare"
             class="w-full h-[260px] object-cover"
           >
 
@@ -214,11 +271,11 @@
 
             <div class="flex flex-wrap gap-3 mb-8">
 
-              <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase tracking-[0.2em]">
-                AI Systems
+              <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase">
+                Media
               </span>
 
-              <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase tracking-[0.2em]">
+              <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase">
                 Automation
               </span>
 
@@ -229,16 +286,20 @@
               class="text-cyan-300 uppercase tracking-[0.2em] text-sm hover:text-white transition"
             >
               Read Report →
-            </a> 
-          </div>  
-     </div>
-     </div>   
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
   </section>
 
-  <!-- PODCAST LIBRARY -->
-  <section id="podcasts" class="py-32 px-6 relative">
+  <!-- PODCASTS -->
+  <section id="podcasts" class="py-32 px-6">
 
     <div class="max-w-7xl mx-auto">
 
@@ -256,134 +317,87 @@
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-        <!-- PODCAST CARD 01 -->
-<div class="glass rounded-[30px] p-8 border border-cyan-400/10 hover:border-cyan-300/40 transition">
+        <!-- PODCAST 1 -->
+        <div class="podcast-card glass rounded-[30px] p-8 border border-cyan-400/10 transition duration-300">
 
-  <p class="text-cyan-300 uppercase tracking-[0.3em] text-xs mb-4">
-    Episode 01
-  </p>
+          <p class="text-cyan-300 uppercase tracking-[0.3em] text-xs mb-4">
+            Episode 01
+          </p>
 
-  <h3 class="text-2xl font-black uppercase mb-6 leading-tight">
-    AI Sovereignty Briefing
-  </h3>
+          <h3 class="text-2xl font-black uppercase mb-6">
+            AI Sovereignty Briefing
+          </h3>
 
-  <img
-    src="images/podcast1.jpg"
-    class="w-full h-[220px] object-cover rounded-[20px] mb-6"
-  >
+          <img
+            src="images/podcast1.jpg"
+            alt="Podcast 1"
+            class="w-full h-[220px] object-cover rounded-[20px] mb-6"
+          >
 
-  <audio controls class="w-full mb-6">
-    <source src="podcast1.mp3" type="audio/mpeg">
-  </audio>
+          <audio controls>
+            <source src="podcast1.mp3" type="audio/mpeg">
+          </audio>
 
-  <p class="text-gray-400 leading-7 mb-6">
-    Strategic analysis of autonomous AI systems, sovereignty infrastructure,
-    and intelligent digital operations.
-  </p>
+        </div>
 
-  <div class="flex flex-wrap gap-3">
+        <!-- PODCAST 2 -->
+        <div class="podcast-card glass rounded-[30px] p-8 border border-cyan-400/10 transition duration-300">
 
-    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase tracking-[0.2em]">
-      AI Systems
-    </span>
+          <p class="text-cyan-300 uppercase tracking-[0.3em] text-xs mb-4">
+            Episode 02
+          </p>
 
-    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase tracking-[0.2em]">
-      Intelligence
-    </span>
+          <h3 class="text-2xl font-black uppercase mb-6">
+            Synthetic Media Warfare
+          </h3>
 
-  </div>
+          <img
+            src="images/podcast2.jpg"
+            alt="Podcast 2"
+            class="w-full h-[220px] object-cover rounded-[20px] mb-6"
+          >
 
-</div>
+          <audio controls>
+            <source src="podcast2.mp3" type="audio/mpeg">
+          </audio>
 
+        </div>
 
+        <!-- PODCAST 3 -->
+        <div class="podcast-card glass rounded-[30px] p-8 border border-cyan-400/10 transition duration-300">
 
-<!-- PODCAST CARD 02 -->
-<div class="glass rounded-[30px] p-8 border border-cyan-400/10 hover:border-cyan-300/40 transition">
+          <p class="text-cyan-300 uppercase tracking-[0.3em] text-xs mb-4">
+            Episode 03
+          </p>
 
-  <p class="text-cyan-300 uppercase tracking-[0.3em] text-xs mb-4">
-    Episode 02
-  </p>
+          <h3 class="text-2xl font-black uppercase mb-6">
+            Autonomous Infrastructure
+          </h3>
 
-  <h3 class="text-2xl font-black uppercase mb-6 leading-tight">
-    Synthetic Media Warfare
-  </h3>
+          <img
+            src="images/podcast3.jpg"
+            alt="Podcast 3"
+            class="w-full h-[220px] object-cover rounded-[20px] mb-6"
+          >
 
-  <img
-    src="images/podcast2.jpg"
-    class="w-full h-[220px] object-cover rounded-[20px] mb-6"
-  >
+          <audio controls>
+            <source src="podcast3.mp3" type="audio/mpeg">
+          </audio>
 
-  <audio controls class="w-full mb-6">
-    <source src="podcast2.mp3" type="audio/mpeg">
-  </audio>
+        </div>
 
-  <p class="text-gray-400 leading-7 mb-6">
-    Understanding synthetic influence systems and AI-generated media ecosystems.
-  </p>
+      </div>
 
-  <div class="flex flex-wrap gap-3">
-
-    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase tracking-[0.2em]">
-      Media Warfare
-    </span>
-
-    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase tracking-[0.2em]">
-      Automation
-    </span>
-
-  </div>
-
-</div>
-
-
-
-<!-- PODCAST CARD 03 -->
-<div class="glass rounded-[30px] p-8 border border-cyan-400/10 hover:border-cyan-300/40 transition">
-
-  <p class="text-cyan-300 uppercase tracking-[0.3em] text-xs mb-4">
-    Episode 03
-  </p>
-
-  <h3 class="text-2xl font-black uppercase mb-6 leading-tight">
-    Autonomous Infrastructure
-  </h3>
-
-  <img
-    src="images/podcast3.jpg"
-    class="w-full h-[220px] object-cover rounded-[20px] mb-6"
-  >
-
-  <audio controls class="w-full mb-6">
-    <source src="podcast3.mp3" type="audio/mpeg">
-  </audio>
-
-  <p class="text-gray-400 leading-7 mb-6">
-    Deep exploration of autonomous digital systems and scalable AI operations.
-  </p>
-
-  <div class="flex flex-wrap gap-3">
-
-    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase tracking-[0.2em]">
-      Infrastructure
-    </span>
-
-    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-xs uppercase tracking-[0.2em]">
-      AI Operations
-    </span>
-
-  </div>
-  
-</div>
-</div>
+    </div>
 
   </section>
 
-  <!-- AI TOOLS DATABASE -->
-  <section id="tools" class="py-32 px-6 relative overflow-hidden">
+  <!-- TOOLS -->
+  <section id="tools" class="py-32 px-6">
 
     <div class="max-w-7xl mx-auto">
 
-      <div class="mb-20 text-center">
+      <div class="text-center mb-20">
 
         <p class="uppercase tracking-[0.4em] text-cyan-300 text-sm mb-4">
           Strategic Systems
@@ -397,7 +411,7 @@
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-        <div class="glass rounded-[30px] p-8 border border-cyan-400/10">
+        <div class="tool-card glass rounded-[30px] p-8 border border-cyan-400/10 transition duration-300">
 
           <h3 class="text-3xl font-black uppercase mb-4">
             ChatGPT
@@ -410,6 +424,7 @@
           <a
             href="https://chatgpt.com"
             target="_blank"
+            rel="noopener noreferrer"
             class="text-cyan-300 uppercase tracking-[0.2em] text-sm hover:text-white transition"
           >
             Access Tool →
@@ -424,11 +439,9 @@
   </section>
 
   <!-- NEWSLETTER -->
-  <section id="newsletter" class="py-32 px-6 relative overflow-hidden">
+  <section id="newsletter" class="py-32 px-6">
 
-    <div class="absolute top-0 left-1/3 w-[500px] h-[500px] bg-cyan-500/10 blur-[160px] rounded-full"></div>
-
-    <div class="max-w-5xl mx-auto relative z-10 glass rounded-[40px] p-12 border border-cyan-400/20 text-center">
+    <div class="max-w-5xl mx-auto glass rounded-[40px] p-12 border border-cyan-400/20 text-center">
 
       <p class="uppercase tracking-[0.4em] text-cyan-300 text-sm mb-6">
         Intelligence Network
@@ -447,10 +460,14 @@
         <input
           type="email"
           placeholder="Enter your email"
+          required
           class="flex-1 px-6 py-5 rounded-full bg-black/40 border border-white/10 outline-none focus:border-cyan-300"
         >
 
-        <button class="px-10 py-5 rounded-full bg-cyan-400 text-black font-bold hover:bg-cyan-300 transition uppercase tracking-[0.2em]">
+        <button
+          type="submit"
+          class="px-10 py-5 rounded-full bg-cyan-400 text-black font-bold hover:bg-cyan-300 transition uppercase tracking-[0.2em]"
+        >
           Subscribe
         </button>
 
@@ -462,26 +479,27 @@
 
   <!-- FOOTER -->
   <footer class="py-12 border-t border-cyan-500/10 text-center text-gray-500 text-sm uppercase tracking-[0.2em]">
+
     AI SCOUT-INTEL © 2026
+
   </footer>
 
   <!-- SEARCH SCRIPT -->
   <script>
 
     const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.report-card');
 
     searchInput.addEventListener('keyup', () => {
 
       const filter = searchInput.value.toLowerCase();
-
-      const cards = document.querySelectorAll('.report-card');
 
       cards.forEach(card => {
 
         const text = card.innerText.toLowerCase();
 
         if (text.includes(filter)) {
-          card.style.display = 'block';
+          card.style.display = '';
         } else {
           card.style.display = 'none';
         }
@@ -493,5 +511,5 @@
   </script>
 
 </body>
-</html>
 
+</html>
